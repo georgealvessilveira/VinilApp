@@ -16,3 +16,6 @@
  - /disco?paginaAtual={qualquer_valor_inteiro}&tamanhoPagina={qualquer_valor_inteiro}
  - /venda/{qualquer_valor_inteiro}
  - /venda?paginaAtual={qualquer_valor_inteiro}&tamanhoPagina={qualquer_valor_inteiro}
+
+# Testes Unitários
+ - Todos os teste unitários estão no projeto VinilApp.Test: https://github.com/georgealvessilveira/VinilApp/tree/master/VinilApp.Test
