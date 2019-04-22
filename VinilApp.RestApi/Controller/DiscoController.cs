@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using VinilApp.RestApi.Database.Config.Interface;
+using VinilApp.RestApi.Database.Config;
 using VinilApp.RestApi.Database.Repository;
 using VinilApp.RestApi.Model;
 
@@ -23,15 +23,15 @@ namespace VinilApp.RestApi.Controller
         }
 
         [HttpGet]
-        public ActionResult<List<Disco>> GetAll(int numeroPagina, int quantidadeDiscos)
+        public ActionResult<List<Disco>> GetAll(int paginaAtual, int tamanhoPagina)
         {
-            return _discoRepository.GetAll(numeroPagina - 1, quantidadeDiscos);
+            return _discoRepository.GetAll(paginaAtual - 1, tamanhoPagina);
         }
 
         [HttpGet]
-        public ActionResult<List<Disco>> GetAll(int numeroPagina, int quantidadeDiscos, string genero)
+        public ActionResult<List<Disco>> GetAll(int paginaAtual, int tamanhoPagina, string genero)
         {
-            return _discoRepository.GetAll(numeroPagina - 1, quantidadeDiscos, genero);
+            return _discoRepository.GetAll(paginaAtual - 1, tamanhoPagina, genero);
         }
     }
 }

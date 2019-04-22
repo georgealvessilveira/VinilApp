@@ -27,10 +27,10 @@ namespace VinilApp.Test.Controller
         [TestMethod]
         public void Busca_discos_definindo_quantidade_por_valor_inicial_e_valor_maximo()
         {
-            var numeroPagina = 1;
-            var quantidadeDiscos = 10;
-            List<Disco> discos = _discoController.GetAll(numeroPagina, quantidadeDiscos).Value;
-            Assert.AreEqual(quantidadeDiscos, discos.Count);
+            var paginaAtual = 1;
+            var tamanhoPagina = 10;
+            List<Disco> discos = _discoController.GetAll(paginaAtual, tamanhoPagina).Value;
+            Assert.AreEqual(tamanhoPagina, discos.Count);
         }
 
         [TestMethod]

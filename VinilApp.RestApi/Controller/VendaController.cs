@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using NodaTime;
-using VinilApp.RestApi.Database.Config.Interface;
+using VinilApp.RestApi.Database.Config;
 using VinilApp.RestApi.Database.Repository;
 using VinilApp.RestApi.Logic;
 using VinilApp.RestApi.Model;
@@ -17,22 +17,22 @@ namespace VinilApp.RestApi.Controller
             _vendaRepository = new VendaRepository(config);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public ActionResult<Venda> Get(int id)
         {
             return _vendaRepository.Get(id);
         }
 
-        [HttpGet("{numeroPagina}, {quantidadeVendas}")]
-        public ActionResult<List<Venda>> GetAll(int numeroPagina, int quantidadeVendas)
+        [HttpGet]
+        public ActionResult<List<Venda>> GetAll(int paginaAtual, int quantidadeVendas)
         {
-            return _vendaRepository.GetAll(numeroPagina - 1, quantidadeVendas);
+            return _vendaRepository.GetAll(paginaAtual - 1, quantidadeVendas);
         }
 
-        [HttpGet("{numeroPagina}, {quantidadeVendas}, {dataInicial}, {dataFinal}")]
-        public ActionResult<List<Venda>> GetAll(int numeroPagina, int quantidadeVendas, LocalDate dataInicial, LocalDate dataFinal)
+        [HttpGet]
+        public ActionResult<List<Venda>> GetAll(int paginaAtual, int quantidadeVendas, LocalDate dataInicial, LocalDate dataFinal)
         {
-            return _vendaRepository.GetAll(numeroPagina - 1, quantidadeVendas, dataInicial, dataFinal);
+            return _vendaRepository.GetAll(paginaAtual - 1, quantidadeVendas, dataInicial, dataFinal);
         }
 
         [HttpPost]

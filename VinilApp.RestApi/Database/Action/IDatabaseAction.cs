@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace VinilApp.RestApi.Database.Config.Interface
+namespace VinilApp.RestApi.Database.Action
 {
     public interface IDatabaseAction
     {

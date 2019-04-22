@@ -2,7 +2,8 @@
 using System.Data;
 using System.Linq;
 using Dapper;
-using VinilApp.RestApi.Database.Config.Interface;
+using VinilApp.RestApi.Database.Action;
+using VinilApp.RestApi.Database.Config;
 using VinilApp.RestApi.Database.Util;
 using VinilApp.RestApi.Model;
 

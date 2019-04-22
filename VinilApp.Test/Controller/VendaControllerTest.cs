@@ -62,10 +62,10 @@ namespace VinilApp.Test.Controller
         [TestMethod]
         public void Busca_vendas_definindo_quantidade_por_valor_inicial_e_valor_maximo()
         {
-            var numeroPagina = 1;
-            var quantidadeVendas = 2;
-            List<Venda> vendas = _vendaController.GetAll(numeroPagina, quantidadeVendas).Value;
-            Assert.AreEqual(quantidadeVendas, vendas.Count);
+            var paginaAtual = 1;
+            var tamanhoPagina = 2;
+            List<Venda> vendas = _vendaController.GetAll(paginaAtual, tamanhoPagina).Value;
+            Assert.AreEqual(tamanhoPagina, vendas.Count);
 
             var itensVenda = new List<ItemVenda>();
             vendas.ForEach(venda => itensVenda.AddRange(venda.ItensVenda));
@@ -80,12 +80,12 @@ namespace VinilApp.Test.Controller
         [TestMethod]
         public void Busca_vendas_definindo_quantidade_por_valor_inicial_valor_maximo_data_inicial_e_data_final()
         {
-            var numeroPagina = 1;
-            var quantidadeVendas = 3;
+            var paginaAtual = 1;
+            var tamanhoPagina = 3;
             var dataInicial = new LocalDate(2019, 4, 16);
             var dataFinal = new LocalDate(2019, 4, 17);
-            List<Venda> vendas = _vendaController.GetAll(numeroPagina, quantidadeVendas, dataInicial, dataFinal).Value;
-            Assert.AreEqual(quantidadeVendas - 1, vendas.Count);
+            List<Venda> vendas = _vendaController.GetAll(paginaAtual, tamanhoPagina, dataInicial, dataFinal).Value;
+            Assert.AreEqual(tamanhoPagina - 1, vendas.Count);
 
             var itensVenda = new List<ItemVenda>();
             vendas.ForEach(venda => itensVenda.AddRange(venda.ItensVenda));

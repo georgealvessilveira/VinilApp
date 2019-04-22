@@ -4,15 +4,3 @@ services:
     build: .
     ports:
       - 5000:80
-  db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 
-      PGDATA: /var/lib/postgresql/data
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080

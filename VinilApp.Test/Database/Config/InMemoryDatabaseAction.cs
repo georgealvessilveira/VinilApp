@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using VinilApp.RestApi.Database.Config.Interface;
+using VinilApp.RestApi.Database.Action;
 
 namespace VinilApp.Test.Database.Config
 {
