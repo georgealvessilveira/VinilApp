@@ -1,0 +1,3 @@
+http://luisquintanilla.me/2017/12/25/client-credentials-authentication-csharp/
+https://github.com/leighmcculloch/vagrant-docker-compose
+https://developer.spotify.com/documentation/web-api/reference/object-model
